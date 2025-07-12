@@ -1,0 +1,14 @@
+# https://nixpacks.com/docs/configuration/file
+
+[phases.install]
+# Use npm install which is more resilient than 'ci' if package-lock.json is not perfectly in sync.
+# This also helps avoid issues with peer dependencies.
+cmds = ["npm install"]
+
+[phases.build]
+# Standard Next.js build command
+cmds = ["npm run build"]
+
+[phases.start]
+# Start the Next.js server on the port provided by the environment (e.g., Easypanel)
+cmd = "npm run start"
